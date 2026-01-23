@@ -24,12 +24,13 @@ def scrap_jpmorgan(browser: Browser) -> list[JobData]:
       continue
 
     clean_url = url.split("?")[0]
-    title = job.locator("search-result-item-header").first.locator('span[data-bind="text: job.title"]').first.inner_text()
+    title = (
+      job.locator("search-result-item-header")
+      .first.locator('span[data-bind="text: job.title"]')
+      .first.inner_text()
+    )
 
     if match(title):
-      result.append(JobData(
-        title=title,
-        url=clean_url
-      ))
+      result.append(JobData(title=title, url=clean_url))
 
   return result
