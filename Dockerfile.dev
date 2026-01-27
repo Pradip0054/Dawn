@@ -3,4 +3,14 @@ FROM mcr.microsoft.com/playwright/python:v1.57.0-noble
 # Install Poetry
 RUN pip install poetry
 
+# Install NodeJS
+RUN cd /tmp && \
+    curl -s -L https://github.com/Schniz/fnm/releases/download/v1.38.1/fnm-linux.zip -o fnm.zip && \
+    python3 -m zipfile -e fnm.zip /usr/local/bin && \
+    chmod +x /usr/local/bin/fnm && \
+    fnm install 24 && \
+    fnm alias default 24 && \
+    rm fnm.zip && \
+    echo 'eval "$(fnm env --use-on-cd --shell bash)"' >> /root/.bashrc
+
 CMD [ "/bin/bash" ]

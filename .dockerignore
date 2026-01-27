@@ -218,3 +218,6 @@ poetry.*
 *.toml
 !poetry.lock
 !pyproject.toml
+
+# Extra folders
+dashboard/
