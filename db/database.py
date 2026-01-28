@@ -15,8 +15,9 @@ def initialize_tables() -> bool:
   sql = """
   CREATE TABLE IF NOT EXISTS jobs_list (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    url TEXT UNIQUE NOT NULL,
     job_role TEXT,
+    url TEXT UNIQUE NOT NULL,
+    company TEXT NOT NULL,
     added_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
@@ -45,8 +46,8 @@ def store_jobs(jobs: list[jobdata.JobData]) -> bool:
     if cuckoo.CUCKOOFILTER.exist(job.url):
       continue
 
-    sql = "INSERT OR IGNORE INTO jobs_list (job_role, url) VALUES (?, ?)"
-    params = [job.title, job.url]
+    sql = "INSERT OR IGNORE INTO jobs_list (job_role, url, company) VALUES (?, ?, ?)"
+    params = [job.title, job.url, job.company]
 
     with Client() as client:
       response = client.post(

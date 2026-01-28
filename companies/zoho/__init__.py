@@ -25,6 +25,6 @@ def scrap_zoho(browser: Browser) -> list[JobData]:
       continue
 
     if match(title):
-      result.append(JobData(title=title, url=url))
+      result.append(JobData(title=title, url=url, company="Zoho"))
 
   return result

@@ -31,6 +31,6 @@ def scrap_jpmorgan(browser: Browser) -> list[JobData]:
     )
 
     if match(title):
-      result.append(JobData(title=title, url=clean_url))
+      result.append(JobData(title=title, url=clean_url, company="JPMorgan"))
 
   return result
