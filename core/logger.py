@@ -3,10 +3,10 @@ from . import debug
 
 
 LOGGER = logging.getLogger("dawn_logger")
-LOGGER.setLevel(logging.DEBUG if debug.DEBUG else logging.WARNING)
+LOGGER.setLevel(logging.DEBUG if debug.DEBUG else logging.INFO)
 
 # If Debugging Environment then Show Debug logs and up
 # Otherwise show warning level or up
 c_handler = logging.StreamHandler()
-c_handler.setLevel(logging.DEBUG if debug.DEBUG else logging.WARNING)
+c_handler.setLevel(logging.DEBUG if debug.DEBUG else logging.INFO)
 LOGGER.addHandler(c_handler)
