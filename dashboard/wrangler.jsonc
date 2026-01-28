@@ -1,0 +1,15 @@
+{
+  "$schema": "./api/node_modules/wrangler/config-schema.json",
+  "name": "dawn",
+  "main": "./api/src/server.ts",
+  "compatibility_date": "2026-01-27",
+  "assets": {
+    "directory": "./web/dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "SCRAPPER_DB"
+    }
+  ]
+}

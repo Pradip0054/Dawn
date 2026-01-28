@@ -1,0 +1,12 @@
+{
+  "name": "dawn",
+  "private": true,
+  "workspaces": [
+    "/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:api": "npm run dev -w api",
+    "deploy": "npm run build -w web && npm run deploy -w api"
+  }
+}
