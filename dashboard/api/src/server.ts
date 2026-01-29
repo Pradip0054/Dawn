@@ -13,7 +13,7 @@ const routes = app.get('/api/jobs', async (context) => {
     return context.json(results);
   } catch (err) {
     console.log(err);
-    return context.json({ message: "Database error" }, 500);
+    return context.json([], 500);
   }
 })
 

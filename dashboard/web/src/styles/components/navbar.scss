@@ -1,0 +1,43 @@
+@use "../include/colors";
+
+
+nav {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid colors.$body-margin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  div#title {
+    font-size: 1.15rem;
+
+    p {
+      margin: 0;
+
+      &.heading {
+        font-weight: bold;
+      }
+      &.description {
+        color: colors.$title-description-color;
+      }
+    }
+  }
+
+  div#qrcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid colors.$title-description-color;
+    border-radius: 0.3rem;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+      margin: 0 0.3rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

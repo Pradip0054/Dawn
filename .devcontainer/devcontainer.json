@@ -10,7 +10,8 @@
 	},
 	"runArgs": [
 		"--ipc=host",
-		"--init"
+		"--init",
+		"--network=host"
 	],
 	"customizations": {
 		"vscode": {
